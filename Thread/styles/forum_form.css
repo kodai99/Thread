@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "M PLUS 1p";
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  letter-spacing: 2px;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template: 
+    "header" 80px
+    "......" 30px
+    "center" 1fr
+    "......" 60px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #173753;
+  z-index: 100;
+}
+
+header h2 a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: rgb(238, 238, 238);
+}
+
+#header_right {
+  margin-right: 20px;
+}
+
+#logout {
+  padding: 7px 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #EC0B43;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+#logout:hover {
+  opacity: 1;
+}
+
+#Post {
+  width: 80%;
+  margin: 0 auto;
+  grid-area: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+#content_input,
+#file_input {
+  display: flex;
+  flex-direction: column;
+}
+
+#content_input textarea,
+#file_input input {
+  margin-top: 20px;
+  flex: 1;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #88888b;
+  cursor: pointer;
+}
+
+#content_input textarea {
+  max-width: 100%;
+  min-height: 60%;
+}
+
+#content_input textarea:focus,
+#file_input input:focus {
+  border-bottom: 1px solid #9AC2C9;
+}
+
+#content_input textarea:focus::placeholder,
+#file_input input:focus::placeholder  {
+  color: transparent;
+}
+
+
+#Err {
+  text-align: left;
+  color: rgb(206, 40, 40);
+}
+
+#submit_post {
+  padding: 7px 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background-color: #9AC2C9;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+}
+
+@media (min-width: 1025px) {
+  body {
+    overflow: hidden;
+    font-size: 20px;
+    grid-template:
+      "header header header header header" 70px
+      "...... ...... ...... ...... ......" 50px
+      "...... center center center ......" 1fr
+      "...... ...... ...... ...... ......" 80px
+      / 0.5fr 0.7fr  0.5fr  0.7fr  0.5fr;
+  }
+
+  header h2 a {
+    margin-left: 100px;
+  }
+
+  #header_right {
+    margin-right: 100px;
+  }
+
+  #Post {
+    width: 50%;
+    padding: 50px;
+    border: 2px solid rgb(85, 145, 150);
+    border-radius: 15px;
+  }
+
+  #content_input textarea {
+    margin-top: 30px;
+  }
+
+  #file_input input {
+    margin-top: 70px;
+  }
+}
